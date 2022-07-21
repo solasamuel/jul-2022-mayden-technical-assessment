@@ -25,7 +25,7 @@ In the project directory, for the backend server you can run in a terminal :
 $ npm run start
 ```
 
-Likewise, for the frontend you can run in a terminal :
+Likewise, for the frontend you can run in another terminal :
 
 ```
 $ npm run start
