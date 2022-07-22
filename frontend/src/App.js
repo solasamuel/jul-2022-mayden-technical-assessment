@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import Header from './components/layout/Header'
 
 import Catalogue from './components/Catalogue';
+import ShoppingList from './components/ShoppingList';
 
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -28,6 +29,7 @@ function App() {
         <div>
           <Routes>
             <Route path='/' element={<Catalogue />} exact />
+            <Route path='/shopping-list' element={<ShoppingList />} exact />
           </Routes>
         </div>
       </div>

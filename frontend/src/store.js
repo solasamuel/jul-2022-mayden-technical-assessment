@@ -2,16 +2,18 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-import { groceriesReducer } from './reducers/groceryReducers'
+import { groceriesReducer } from './reducers/groceryReducers';
+import { shoppingListReducer } from './reducers/shoppingListReducer';
 
 const reducer = combineReducers({
     groceries: groceriesReducer,
+    shoppingList: shoppingListReducer,
 })
 
 let initialState = {
-    shopperData: {
-        shoppingList: localStorage.getItem('shoppingList')
-            ? JSON.parse(localStorage.getItem('shoppingList'))
+    shoppingList: {
+        itemsToBuy: localStorage.getItem('itemsToBuy')
+            ? JSON.parse(localStorage.getItem('itemsToBuy'))
             : [],
         boughtItems: localStorage.getItem('boughtItems')
             ? JSON.parse(localStorage.getItem('boughtItems'))
