@@ -21,13 +21,14 @@ const ShoppingList = () => {
     const decreaseQty = (item) => {
 
         const newQty = item.quantity - 1
-        if  (newQty <= 0) return
+        if (newQty <= 0) return
 
         dispatch(addItemToShoppingList(item, newQty)) // changing item already in the shopping list
     }
 
     const removeShoppingListItemHandler = (tpnb) => {
-        dispatch(removeItemFromShoppingList(tpnb))
+        dispatch(removeItemFromShoppingList(tpnb));
+        toast.success('Item removed from shopping list')
     }
 
 
@@ -68,6 +69,10 @@ const ShoppingList = () => {
                         </Fragment>
                     )}
                 </section>
+
+                <h3 className="text-center">SHOPPING LIST TOTAL: £{itemsToBuy.reduce((accumulator, object) => {
+                    return accumulator + object.price * object.quantity;
+                }, 0)}</h3>
 
                 <h3 className="text-center">BOUGHT ITEMS</h3>
 
