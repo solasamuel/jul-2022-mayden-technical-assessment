@@ -31,7 +31,7 @@ const Grocery = ({ item }) => {
 
     const handleAddToShoppingList = () => {
         // console.log(item.name);
-        dispatch(addItemToShoppingList(item, quantity));
+        dispatch(addItemToShoppingList(item, quantity)); // not changing an item already existing in the shopping list
         toast.success("Item added to shopping list");
     }
 
