@@ -22,12 +22,15 @@ Project is created with:
 In the project directory, for the backend server you can run in a terminal :
 
 ```
+
+$ npm install
 $ npm run start
 ```
 
 Likewise, for the frontend you can run in another terminal :
 
 ```
+$ npm install
 $ npm run start
 ```
 

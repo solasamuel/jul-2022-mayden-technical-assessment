@@ -1,8 +1,10 @@
 import React, { Fragment, useEffect } from 'react';
-
+import { ToastContainer, toast } from 'react-toastify'
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getGroceries } from '../actions/groceryActions'
+import { getGroceries } from '../actions/groceryActions';
+
+import Grocery from './Grocery';
 
 const Catalogue = () => {
 
@@ -14,10 +16,6 @@ const Catalogue = () => {
         dispatch(getGroceries());
     }, [dispatch])
 
-    const addToShoppingList = (item) => {
-        
-    }
-
     return (
         <Fragment>
             <div className='constainer-fluid'>
@@ -27,15 +25,7 @@ const Catalogue = () => {
 
                 <section id="groceries" className='container my-5' >
                     {groceries && groceries.map(item => (
-                        <div className='container d-flex justify-content-between align-items-center'>
-                            <div className='card p-3 rounded my-2 col-10'>
-                                <p>{item.name}</p>
-                                <p>£{item.price}</p>
-                            </div>
-                            <button className="col-1 h-50" onClick={addToShoppingList(item)}>
-                                +
-                            </button>
-                        </div>
+                        <Grocery key={item.tpnb} item={item} />
                     ))}
                 </section>
 
